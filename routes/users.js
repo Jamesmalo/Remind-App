@@ -14,18 +14,19 @@ router.get('/home', function(req, res, next) {
   res.render('homepage',{subtitle: 'test'});
 });
 
-router.post('/displayAssignmnets/:id', function (req, res, next){
-    let id = "assignment"+req.params.id;
+router.get('/displayAssignment/:id', function (req, res, next){
+    let id = req.params.id;
     client.hgetall(id, function(err,obj){
         if(!obj){
+            console.log(id);
             res.render('index',{
                 error: 'Assignment does not exist',
             });
         }
         else{
             console.log(obj);
-            obj.assignmentid = req.body.id;
-            res.render('/allAssignments',{
+            obj.id = req.body.id;
+            res.render('assignment',{
                 assignment:obj
             });
         }
@@ -33,7 +34,6 @@ router.post('/displayAssignmnets/:id', function (req, res, next){
 });
 
 router.get('/all', function(req, res, next){
-
   client.keys('assignment*', function(err, data){
         if(err){
             console.log(err);
@@ -46,7 +46,6 @@ router.get('/all', function(req, res, next){
                 assignmentlist[item] = data[d];
             }
             res.render('allAssignments', assignmentlist);
-            console.log(data);
             console.log(assignmentlist);
         }
   });

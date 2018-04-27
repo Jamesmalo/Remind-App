@@ -13,6 +13,10 @@ router.get('/add', function(req, res, next){
   res.render('add',{title: 'Homework Reminder',subtitle: 'Add an Assignment'});
 });
 
+router.get('/edit', function(req, res, next) {
+  res.render('edit');
+});
+
 
 /*post assignment*/
 router.post('/search',function (req, res, next){
@@ -49,6 +53,30 @@ router.post('/delsearch',function (req, res, next){
             });
         }
     })
+});
+
+router.put('/edit', function(req, res, next){
+  let assignmentid = 'assignment'+req.body.id;
+  let period = req.body.period;
+  let teacher = req.body.teacher;
+  let assignment = req.body.assignment;
+  let date = req.body.date;
+
+  client.hmset(assignmentid, [
+    'period', period,
+    'teacher',  teacher,
+    'assignment', assignment,
+    'date', date
+  ],function(err,reply){
+    if(err){
+      console.log(err);
+    }
+    else {
+      console.log(reply);
+      res.redirect('/users/home')
+    }
+  }
+);
 });
 
 router.post('/add', function(req, res, next){

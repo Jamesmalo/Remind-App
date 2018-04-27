@@ -1,0 +1,58 @@
+body {
+  padding: 50px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+
+}
+.btn{
+  display: block;
+  background-color: #333;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  margin-top: 10px;
+}
+.navbarul{
+  list-style-type: none;
+  margin: 0px;
+  padding: 0px;
+  overflow: hidden;
+  background-color: #333;
+}
+.navbarli{
+  float: left;
+  border-right: 1px solid white;
+}
+.navbara{
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+
+}
+a#main-tab:hover {
+    background-color: #111;
+}
+.display-assignments{
+  list-style-type: none;
+  margin: 10px 0px 0px 0px;
+  padding: 0px;
+  overflow: hidden;
+  color:black;
+}
+a#sub-link{
+  text-decoration: none;
+  color: #0003c4;
+}
+a#sub-link:hover {
+    background-color: #333;
+}
+.add-form {
+  margin: 10px 0px 10px 0px;
+}
+
+nav{
+  padding-right: 5px;
+
+}
