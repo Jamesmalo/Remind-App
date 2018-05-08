@@ -1,10 +1,10 @@
 <h1>Here is your requested Assignment</h1>
 <ul>
-  <li class="display-assignments">ID: {{assignment.id}}</li>
+  <li class="display-assignments">ID: {{assignment.aid}}</li>
   <li class="display-assignments">Period: {{assignment.period}}</li>
   <li class="display-assignments">Teacher's Name: {{assignment.teacher}}</li>
   <li class="display-assignments">Assignment: {{assignment.assignment}}</li>
   <li class="display-assignments">Due Date: {{assignment.date}}</li>
 </ul>
-<a class="btn" href="/modify/edit">Edit</a>
+<a class="btn" href="/modify/edit/{{assignment.aid}}">Edit</a>
 <a class="btn" href="/users/home">Back</a>

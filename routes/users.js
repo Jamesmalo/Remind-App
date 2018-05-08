@@ -25,7 +25,7 @@ router.get('/displayAssignment/:id', function (req, res, next){
         }
         else{
             console.log(obj);
-            obj.id = req.body.id;
+            obj.aid = req.body.id;
             res.render('assignment',{
                 assignment:obj
             });

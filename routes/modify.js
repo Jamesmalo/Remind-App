@@ -29,7 +29,7 @@ router.post('/search',function (req, res, next){
             });
         }
         else{
-            obj.id = id;
+            obj.aid = id;
             res.render('assignment',{
                 assignment:obj
             });
@@ -55,8 +55,8 @@ router.post('/delsearch',function (req, res, next){
     })
 });
 
-router.put('/edit', function(req, res, next){
-  let assignmentid = 'assignment'+req.body.id;
+router.put('/edit/:id', function(req, res, next){
+  let assignmentid = req.params.id;
   let period = req.body.period;
   let teacher = req.body.teacher;
   let assignment = req.body.assignment;
@@ -73,7 +73,9 @@ router.put('/edit', function(req, res, next){
     }
     else {
       console.log(reply);
-      res.redirect('/users/home')
+      obj.aid = req.body.id;
+      res.render('editsuccess')
+        assignment:obj
     }
   }
 );
@@ -87,6 +89,7 @@ router.post('/add', function(req, res, next){
   let date = req.body.date;
 
   client.hmset(assignmentid, [
+    'aid', assignmentid,
     'period', period,
     'teacher',  teacher,
     'assignment', assignment,
