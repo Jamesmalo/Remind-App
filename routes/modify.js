@@ -55,7 +55,7 @@ router.post('/delsearch',function (req, res, next){
     })
 });
 
-router.put('/edit/:id', function(req, res, next){
+router.post('/edit/:id', function(req, res, next){
   let assignmentid = req.params.id;
   let period = req.body.period;
   let teacher = req.body.teacher;
