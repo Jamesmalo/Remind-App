@@ -31,14 +31,14 @@ body {
   text-decoration: none;
 
 }
-.main-tab:hover {
+#main-tab:hover {
     background-color: #111;
 }
-.sub-link{
+#sub-link{
   text-decoration: none;
   color: #0003c4;
 }
-.sub-link:hover {
+#sub-link:hover {
     background-color: #cdeff4;
 }
 .display-assignments{

@@ -13,8 +13,9 @@ router.get('/add', function(req, res, next){
   res.render('add',{title: 'Homework Reminder',subtitle: 'Add an Assignment'});
 });
 
-router.get('/edit', function(req, res, next) {
-  res.render('edit');
+router.get('/edit/:id', function(req, res, next) {
+  let id = req.params.id;
+  res.render('edit',{id:id});
 });
 
 
@@ -55,13 +56,14 @@ router.post('/delsearch',function (req, res, next){
     })
 });
 
-router.post('/edit/', function(req, res, next){
+router.put('/edit/:id', function(req, res, next){
+  let id = req.params.id;
   let period = req.body.period;
   let teacher = req.body.teacher;
   let assignment = req.body.assignment;
   let date = req.body.date;
 
-  client.hmset("assignment00", [
+  client.hmset(id, [
     'period', period,
     'teacher',  teacher,
     'assignment', assignment,
