@@ -1,7 +1,6 @@
 body {
   padding: 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
-
 }
 .btn{
   display: block;
@@ -20,6 +19,7 @@ body {
   background-color: #333;
 }
 .navbarli{
+
   float: left;
   border-right: 1px solid white;
 }
@@ -31,8 +31,15 @@ body {
   text-decoration: none;
 
 }
-a#main-tab:hover {
+.main-tab:hover {
     background-color: #111;
+}
+.sub-link{
+  text-decoration: none;
+  color: #0003c4;
+}
+.sub-link:hover {
+    background-color: #cdeff4;
 }
 .display-assignments{
   list-style-type: none;
@@ -40,13 +47,6 @@ a#main-tab:hover {
   padding: 0px;
   overflow: hidden;
   color:black;
-}
-a#sub-link{
-  text-decoration: none;
-  color: #0003c4;
-}
-a#sub-link:hover {
-    background-color: #cdeff4;
 }
 .add-form {
   margin: 10px 0px 10px 0px;
@@ -56,3 +56,20 @@ nav{
   padding-right: 5px;
 
 }
+h2{
+  text-align: center;
+}
+footer{
+  right: 0;
+  bottom: 0;
+  left: 0;
+  padding: 1rem;
+  background-color: #333;
+  color: white;
+  text-align: center;
+
+}
+.hsearch{
+  text-align:center;
+}
+/*<footer>James Malo | St. Patrick Highschool | May 2018</footer>
