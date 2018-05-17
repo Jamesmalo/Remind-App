@@ -11,6 +11,17 @@ body {
   text-decoration: none;
   margin-top: 10px;
 }
+
+.hbtn{
+  background-color: #333;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  margin-left:47.5%;
+
+}
+
 .navbarul{
   list-style-type: none;
   margin: 0px;
@@ -40,6 +51,10 @@ body {
 }
 #sub-link:hover {
     background-color: #cdeff4;
+}
+#sub-link:visited{
+  text-decoration: none;
+  color: #0003c4;
 }
 .display-assignments{
   list-style-type: none;
